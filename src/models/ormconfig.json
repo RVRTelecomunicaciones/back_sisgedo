@@ -1,0 +1,13 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "10.2.0.21",
+    "port": 5432,
+    "username": "juliochavez",
+    "password": "0vsGmq2##2024",
+    "database": "",
+    "synchronize": false,
+    "entities": ["entities/*.js"]
+  }
+]

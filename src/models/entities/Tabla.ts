@@ -2,10 +2,9 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("tabla", { schema: "public" })
 export class Tabla {
-
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  
+
   @Column("character varying", { name: "tabl_tipo", nullable: true, length: 6 })
   tablTipo: string | null;
 

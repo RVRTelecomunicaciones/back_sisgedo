@@ -10,10 +10,10 @@ import { TipoExpediente } from "./TipoExpediente";
 import { Dependencia } from "./Dependencia";
 import { Usuario } from "./Usuario";
 
+@Index("tipo_expediente_correl_idx1", ["depeId"], {})
 @Index("tipo_expediente_correl_pkey", ["depeId", "tecoId", "texpId"], {
   unique: true,
 })
-@Index("tipo_expediente_correl_idx1", ["depeId"], {})
 @Index("tipo_expediente_correl_idx2", ["idUsu"], {})
 @Index("tipo_expediente_correl_teco_id_key", ["tecoId"], { unique: true })
 @Index("tipo_expediente_correl_idx3", ["tecoPeriodo"], {})

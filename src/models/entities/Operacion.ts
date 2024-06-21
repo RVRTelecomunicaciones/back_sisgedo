@@ -10,10 +10,10 @@ import { Dependencia } from "./Dependencia";
 import { Usuario } from "./Usuario";
 import { Archivador } from "./Archivador";
 
+@Index("operacion_idx1", ["depeId"], {})
 @Index("operacion_pkey", ["depeId", "expeId", "idUsu", "operId"], {
   unique: true,
 })
-@Index("operacion_idx1", ["depeId"], {})
 @Index("operacion_idx4", ["expeId"], {})
 @Index("operacion1", ["operDepeidD", "operFecha", "operIdtope"], {})
 @Index("operacion_idx3", ["operExpeidAdj"], {})

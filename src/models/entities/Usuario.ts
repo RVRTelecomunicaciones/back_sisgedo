@@ -19,8 +19,8 @@ import { Archivador } from "./Archivador";
 @Index("usuario_depe_id", ["depeId"], {})
 @Index("usuario_id_usu_key", ["idUsu"], { unique: true })
 @Index("usuario_idx", ["usuaLogin"], {})
-@Index("usuario_ya_existe", ["usuaLogin"], { unique: true })
 @Index("usuario_verifica", ["usuaLogin", "usuaPassword"], {})
+@Index("usuario_ya_existe", ["usuaLogin"], { unique: true })
 @Index("usuario_nombres", ["usuaNombres"], {})
 @Entity("usuario", { schema: "public" })
 export class Usuario {

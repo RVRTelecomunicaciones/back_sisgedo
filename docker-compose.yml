@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  sisgedo_mad:
+    container_name: sisgedo_mad
+    env_file:
+      - ./.env
+    build:
+      context: .
+      target: production
+      dockerfile: ./Dockerfile
+    working_dir: /usr/src/app
+    stdin_open: true
+    tty: true
+    ports:
+      - 3001:3000
+    command: npm run start:prod
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  db-config:
+  db-data:

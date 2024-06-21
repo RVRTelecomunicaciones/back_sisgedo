@@ -8,8 +8,8 @@ import {
 } from "typeorm";
 import { Mensaje } from "./Mensaje";
 
-@Index("chat_chat_id_key", ["chatId"], { unique: true })
 @Index("chat_pkey", ["chatId", "mensId"], { unique: true })
+@Index("chat_chat_id_key", ["chatId"], { unique: true })
 @Index("chat_mens_id", ["mensId"], {})
 @Index("chat_dest_estado", ["usuaDestino"], {})
 @Entity("chat", { schema: "public" })

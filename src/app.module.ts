@@ -1,12 +1,17 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UsuarioModule } from './usuario/usuario.module';
 import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/auth.service';
+import { UsuarioModule } from './usuario/usuario.module';
+import { JwtModule } from '@nestjs/jwt';
+import { UsuarioApiModule } from './usuario-api/usuario-api.module';
+import { ExpedienteModule } from './expediente/expediente.module';
 
 @Module({
   imports: [
+    JwtModule.register({
+      global: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: '10.2.0.21',
@@ -18,9 +23,11 @@ import { AuthModule } from './auth/auth.module';
       synchronize: false,
     }),
     UsuarioModule,
-    AuthModule
+    AuthModule,
+    UsuarioApiModule,
+    ExpedienteModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
-export class AppModule {}
+export class AppModule { }

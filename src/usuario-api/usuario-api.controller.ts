@@ -8,8 +8,8 @@ import { CrearUsuarioDto } from './dto/crear-usuario.dto';
 export class UsuarioApiController {
   constructor(private readonly usuarioApiService: UsuarioApiService) { }
 
-  @Post('create')
-  create(@Body() crearUsuarioDto: CrearUsuarioDto) {
-    return this.usuarioApiService.create(crearUsuarioDto)
-  }
+  // @Post('create')
+  // create(@Body() crearUsuarioDto: CrearUsuarioDto) {
+  //   return this.usuarioApiService.create(crearUsuarioDto)
+  // }
 }

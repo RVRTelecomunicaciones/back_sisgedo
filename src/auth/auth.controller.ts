@@ -8,14 +8,14 @@ import { CredencialDto } from './dto/credencial.dto';
 export class AuthController {
   constructor(private readonly authService: AuthService) { }
 
-  @Post('generateToken')
-  generateToken(@Body() credencialDto: CredencialDto) {
-    return this.authService.generateToken(credencialDto)
-  }
+  // @Post('generateToken')
+  // generateToken(@Body() credencialDto: CredencialDto) {
+  //   return this.authService.generateToken(credencialDto)
+  // }
 
-  @Post('verifyToken')
-  verifyToken(@Headers('token') token: string) {
-    return this.authService.verifyToken(token)
-  }
+  // @Post('verifyToken')
+  // verifyToken(@Headers('token') token: string) {
+  //   return this.authService.verifyToken(token)
+  // }
 
 }
